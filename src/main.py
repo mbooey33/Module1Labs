@@ -136,3 +136,82 @@ noun2 = input("Enter a noun: ")
 #madlib story
 my_mad_lib_phrase = f"Today I went to the zoo. I saw a(n) {adjective} {noun1} jumping up and down in its tree. He {past_tense_verb} {adverb} through the large tunnel that lead to its {adjective2} {noun2}."
 print(my_mad_lib_phrase)
+
+# Question 11
+
+# Ask the user for two integers
+num1 = int(input("Enter the first integer: "))
+num2 = int(input("Enter the second integer: "))
+
+# Perform arithmetic operations
+addition = num1 + num2
+subtraction = num1 - num2
+multiplication = num1 * num2
+
+# Check if num2 is not equal to 0 before performing division and modulus
+if num2 != 0:
+    division = num1 / num2
+    modulus = num1 % num2
+    print("Division:", division)
+    print("Modulus:", modulus)
+else:
+    print("Division and Modulus: You can't divide by 0.")
+
+# Display the results of addition, subtraction, and multiplication
+print("Addition:", addition)
+print("Subtraction:", subtraction)
+print("Multiplication:", multiplication)
+
+
+# Question 12
+
+# Ask the user for their age
+age = int(input("Enter your age: "))
+
+# Check age and provide corresponding output
+if age < 0:
+    print("Invalid age")
+elif age >= 55:
+    print("You get the senior discount")
+elif age >= 21:
+    print("You can enjoy a beer")
+elif age >= 18:
+    print("You can vote")
+elif age >= 16:
+    print("You can drive")
+
+# Question 13
+
+import random
+
+# Get the user's choice
+user_choice = input("Enter 1 (rock), 2 (paper), or 3 (scissors): ")
+
+# Convert the user's choice to an integer
+user_choice = int(user_choice)
+
+# Check if the user's choice is valid
+if user_choice not in [1, 2, 3]:
+    print("Invalid choice. Please choose 1 (rock), 2 (paper), or 3 (scissors).")
+else:
+    # Generate a random choice for the computer
+    computer_choice = random.randint(1, 3)
+
+    # Define the choices
+    choices = {1: "rock", 2: "paper", 3: "scissors"}
+
+    # Display the user's choice and the computer's choice
+    print(f"Your choice: {choices[user_choice]}")
+    print(f"Computer's choice: {choices[computer_choice]}")
+
+    # Determine the winner
+    if user_choice == computer_choice:
+        print("It's a tie!")
+    elif (
+        (user_choice == 1 and computer_choice == 3) or
+        (user_choice == 2 and computer_choice == 1) or
+        (user_choice == 3 and computer_choice == 2)
+    ):
+        print("You win!")
+    else:
+        print("Computer wins!")
