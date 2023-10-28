@@ -215,3 +215,50 @@ else:
         print("You win!")
     else:
         print("Computer wins!")
+
+
+#Wrapping it all together
+
+import random
+
+# Initialize variables to keep track of correct and incorrect answers
+correct_answers = 0
+incorrect_answers = 0
+
+# Ask the user for their name
+user_name = input("Enter your name: ")
+
+# Greet the user
+print(f"Hello, {user_name}! Let's test your math skills.")
+
+# Loop to ask 10 math questions
+for question_number in range(1, 11):
+    # Generate two random numbers between 1 and 20 for the equation
+    num1 = random.randint(1, 20)
+    num2 = random.randint(1, 20)
+
+    # Choose a random operation (addition or subtraction)
+    operation = random.choice(["+", "-"])
+
+    # Create the math question as a string
+    math_question = f"{num1} {operation} {num2} = ?"
+
+    # Calculate the correct answer
+    if operation == "+":
+        correct_answer = num1 + num2
+    else:
+        correct_answer = num1 - num2
+
+    # Display the math question and ask for the user's answer
+    user_answer = int(input(f"Question {question_number}: {math_question} Your answer: "))
+
+    # Check if the user's answer is correct
+    if user_answer == correct_answer:
+        print("Correct! Great job.")
+        correct_answers += 1
+    else:
+        print(f"Sorry, the correct answer is {correct_answer}.")
+        incorrect_answers += 1
+
+# Display the results
+print(f"\n{user_name}, you got {correct_answers} out of 10 questions correct.")
